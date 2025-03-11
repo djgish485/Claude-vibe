@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Claude Code Babysitter - Simple Version
+# Claude Vibe
 # Auto-confirms prompts for Claude
 
 # Check for expect
