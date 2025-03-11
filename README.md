@@ -33,11 +33,15 @@ sudo apt-get install expect  # on Ubuntu/Debian
 
 ## Usage
 
-To use the notification feature, edit notify-vibe.js and add your own Google Script to be emailed (or however you want). Then run this in Claude (Vibe) Code: Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute ./notify-vibe.js "summary" where "summary" is a few words describing what it just did.
-
 Run Claude with auto-confirmation:
 ```bash
 vibe [claude args]
 ```
 
 This wrapper will automatically handle confirmation prompts that would normally require manual input.
+
+To use the notification feature, edit notify-vibe.js and add your own Google Script to be emailed (or however you want). Then run this in Claude (Vibe) Code:
+
+```
+Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute /usr/local/bin/notify-vibe "summary" where "summary" is a few words describing what it just did.
+```
