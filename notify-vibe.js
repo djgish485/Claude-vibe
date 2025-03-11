@@ -27,7 +27,7 @@ try {
   // execSync(`osascript -e 'display notification "${safeMessage}" with title "${DEFAULT_TITLE}"'`);
   
   // Use the new web URL with body parameter
-  const baseUrl = "https://script.google.com/macros/s/AKfycbxTStgE6DDj1scWyUbRrG0nCoDasOc5-Z56mAC5gvS9k9YuKx29OKOUCSYWI6Np5cr4/exec";
+  const baseUrl = "GOOGLE_SCRIPT_URL";
   const urlEncodedMessage = encodeURIComponent(safeMessage);
   const curlCommand = `curl -s "${baseUrl}?body=${urlEncodedMessage}"`;
   execSync(curlCommand);
