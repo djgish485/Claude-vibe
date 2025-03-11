@@ -71,6 +71,14 @@ To use the notification feature:
 
 A log of all notifications is kept at `/tmp/vibe-notify.log`.
 
+## Github Vibe
+
+We like to have Claude Code automatically commit all code changes so it's easy to revert a vibe gone wrong. Instruct Claude Code to:
+
+```
+After ALL code changes, automatically stage and commit the modified files with a summary message of the changes made.
+```
+
 ## Important Note
 
 ⚠️ This is an initial version and auto-confirmation sometimes fails. Working on it!
