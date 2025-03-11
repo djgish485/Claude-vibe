@@ -40,8 +40,23 @@ vibe [claude args]
 
 This wrapper will automatically handle confirmation prompts that would normally require manual input.
 
+## Notification Usage
+
 To use the notification feature, edit notify-vibe.js and add your own Google Script to be emailed (or however you want). Then run this in Claude (Vibe) Code:
 
 ```
 Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute /usr/local/bin/notify-vibe "summary" where "summary" is a few words describing what it just did.
 ```
+
+Google Scripts makes it easy to email yourself. Here's a sample script you can deploy:
+
+```javascript
+function doGet(e) {
+  var body = e.parameter.body || "No body text provided";
+
+  MailApp.sendEmail("your-email-address", "vibing: "+body, "Your Claude Code task has completed successfully.");
+  return ContentService.createTextOutput("Email sent successfully: "+body);
+}
+```
+
+Then paste the deployment URL into notify-vibe.js
