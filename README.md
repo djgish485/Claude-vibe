@@ -78,7 +78,7 @@ A log of all notifications is kept at `/tmp/vibe-notify.log`.
 We like to have Claude Code automatically commit all code changes so it's easy to revert a vibe gone wrong. Instruct Claude Code to:
 
 ```
-After ALL code changes, automatically stage and commit the modified files with a summary message of the changes made.
+Add to CLAUDE.md the instruction for Claude that after ALL code changes, automatically stage and commit the modified files with a summary message of the changes made.
 ```
 
 ## Important Note
