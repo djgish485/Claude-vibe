@@ -41,10 +41,11 @@ chmod +x claude-vibe.sh
 chmod +x notify-vibe.js
 ```
 
-3. Create symlink in a directory in your PATH:
+3. Create symlinks in a directory in your PATH:
 ```bash
 # On macOS/Linux:
 ln -s "$(pwd)/claude-vibe.sh" /usr/local/bin/vibe
+ln -s "$(pwd)/notify-vibe.js" /usr/local/bin/notify-vibe
 ```
 
 4. Ensure dependencies are installed:
@@ -61,7 +62,7 @@ sudo apt-get install expect  # on Ubuntu/Debian
 
 - After ALL code changes, automatically stage and commit the modified files with a summary message of the changes made.
 - To push changes to the remote repository, run `git push`.
-- At the end of EVERY response, always execute `./notify-vibe.js "summary"` where "summary" is a few words describing what was just done.
+- At the end of EVERY response, always execute `notify-vibe "summary"` where "summary" is a few words describing what was just done.
 
 ## Usage
 
