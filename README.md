@@ -4,25 +4,27 @@ Claude-Vibe is a CLI wrapper for Claude Code that auto-confirms prompts, freeing
 
 ## Installation
 
-1. Clone this repo: 
+1. Install Claude Code from https://github.com/anthropics/claude-code
+
+2. Clone this repo: 
 ```bash
 git clone git@github.com:djgish485/Claude-vibe.git
 ```
 
-2. Make the scripts executable:
+3. Make the scripts executable:
 ```bash
 chmod +x claude-vibe.sh
 chmod +x notify-vibe.js
 ```
 
-3. Create symlinks in a directory in your PATH:
+4. Create symlinks in a directory in your PATH:
 ```bash
 # On macOS/Linux:
 ln -s "$(pwd)/claude-vibe.sh" /usr/local/bin/vibe
 ln -s "$(pwd)/notify-vibe.js" /usr/local/bin/notify-vibe
 ```
 
-4. Ensure dependencies are installed:
+5. Ensure dependencies are installed:
 ```bash
 # Install expect utility
 brew install expect  # on macOS
