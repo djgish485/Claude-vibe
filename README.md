@@ -48,6 +48,8 @@ To use the notification feature, edit notify-vibe.js and add your Google Script 
 Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute /usr/local/bin/notify-vibe "summary" where "summary" is a few words describing what it just did.
 ```
 
+A log of all notifications is kept at `/tmp/vibe-notify.log`.
+
 Google Scripts makes it easy to email yourself. Here's a sample script you can deploy:
 
 ```javascript
