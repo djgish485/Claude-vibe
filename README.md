@@ -71,7 +71,7 @@ To use the notification feature:
 
 A log of all notifications is kept at `/tmp/vibe-notify.log`.
 
-## Github Vibe
+## Undoing Vibe
 
 We like to have Claude Code automatically commit all code changes so it's easy to revert a vibe gone wrong. Instruct Claude Code to:
 
