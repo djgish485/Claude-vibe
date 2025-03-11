@@ -1,0 +1,21 @@
+# Claude-Vibe Project Guide
+
+## Commands
+- Run script: `./claude-vibe.sh [claude args]`
+- Install dependency: `brew install expect`
+- Check syntax: `shellcheck claude-vibe.sh`
+- Debug: `bash -x claude-vibe.sh [claude args]`
+
+## Code Style Guidelines
+- **Formatting**: Follow standard shell script formatting (2-space indentation)
+- **Comments**: Include comments for all non-trivial operations
+- **Error Handling**: Check command availability before execution
+- **Variable Names**: Use UPPERCASE for constants, lowercase_with_underscores for variables
+- **Script Structure**:
+  1. Environment checks first
+  2. Function definitions
+  3. Main execution logic
+  4. Cleanup operations
+  
+## Project Overview
+A wrapper script for Claude that auto-confirms common prompts, making interaction smoother. Uses the 'expect' utility to automate responses to interactive prompts.
