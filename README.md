@@ -44,7 +44,7 @@ chmod +x notify-vibe.js
 3. Create symlink in a directory in your PATH:
 ```bash
 # On macOS/Linux:
-ln -s "$(pwd)/claude-vibe.sh" /usr/local/bin/claude-vibe
+ln -s "$(pwd)/claude-vibe.sh" /usr/local/bin/vibe
 ```
 
 4. Ensure dependencies are installed:
@@ -67,7 +67,7 @@ sudo apt-get install expect  # on Ubuntu/Debian
 
 Run Claude with auto-confirmation:
 ```bash
-claude-vibe [claude args]
+vibe [claude args]
 ```
 
 This wrapper will automatically handle confirmation prompts that would normally require manual input.
