@@ -26,8 +26,12 @@ try {
   // Comment out the macOS notification
   // execSync(`osascript -e 'display notification "${safeMessage}" with title "${DEFAULT_TITLE}"'`);
   
-  // Use the new web URL with body parameter
-  const baseUrl = "GOOGLE_SCRIPT_URL";
+  // Use environmental variable for notification URL
+  const baseUrl = process.env.VIBE_NOTIFICATION_SCRIPT;
+  if (!baseUrl) {
+    console.log("No VIBE_NOTIFICATION_SCRIPT environment variable set. Skipping remote notification.");
+    return;
+  }
   const urlEncodedMessage = encodeURIComponent(safeMessage);
   const curlCommand = `curl -s "${baseUrl}?body=${urlEncodedMessage}"`;
   execSync(curlCommand);

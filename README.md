@@ -42,23 +42,32 @@ This wrapper will automatically handle confirmation prompts that would normally 
 
 ## Notification Usage
 
-To use the notification feature, edit notify-vibe.js and add your Google Script (or however you want to be notified). Then run this in Claude (Vibe) Code:
+To use the notification feature:
 
-```
-Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute /usr/local/bin/notify-vibe "summary" where "summary" is a few words describing what it just did.
-```
+1. Set up your notification endpoint:
+
+   Google Scripts makes it easy to email yourself. Here's a sample script you can deploy:
+
+   ```javascript
+   function doGet(e) {
+     var body = e.parameter.body || "No body text provided";
+
+     MailApp.sendEmail("your-email-address", "vibing: "+body, "Your Claude Code task has completed successfully.");
+     return ContentService.createTextOutput("Email sent successfully: "+body);
+   }
+   ```
+
+2. Set the `VIBE_NOTIFICATION_SCRIPT` environment variable to your deployment URL:
+
+   ```bash
+   # Add this to your .bashrc, .zshrc, or equivalent
+   export VIBE_NOTIFICATION_SCRIPT="https://script.google.com/macros/s/your-deployed-script-id/exec"
+   ```
+
+3. Add the notification instruction to your CLAUDE.md:
+
+   ```
+   Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute /usr/local/bin/notify-vibe "summary" where "summary" is a few words describing what it just did.
+   ```
 
 A log of all notifications is kept at `/tmp/vibe-notify.log`.
-
-Google Scripts makes it easy to email yourself. Here's a sample script you can deploy:
-
-```javascript
-function doGet(e) {
-  var body = e.parameter.body || "No body text provided";
-
-  MailApp.sendEmail("your-email-address", "vibing: "+body, "Your Claude Code task has completed successfully.");
-  return ContentService.createTextOutput("Email sent successfully: "+body);
-}
-```
-
-Then paste the deployment URL into notify-vibe.js
