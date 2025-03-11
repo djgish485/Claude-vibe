@@ -71,3 +71,7 @@ To use the notification feature:
    ```
 
 A log of all notifications is kept at `/tmp/vibe-notify.log`.
+
+## Important Note
+
+⚠️ This is an initial version and auto-confirmation sometimes fails. Working on it!
