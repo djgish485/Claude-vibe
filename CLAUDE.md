@@ -19,3 +19,8 @@
   
 ## Project Overview
 A wrapper script for Claude that auto-confirms common prompts, making interaction smoother. Uses the 'expect' utility to automate responses to interactive prompts.
+
+## Post-Code Change Instructions
+After ALL code changes, automatically stage and commit the modified files with a summary message of the changes made.
+
+To push changes to the remote repository, run `git push`.
