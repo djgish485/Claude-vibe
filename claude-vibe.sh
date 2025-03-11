@@ -58,6 +58,11 @@ expect_after {
         exp_continue
     }
     
+    "│ ❯ Yes" {
+        send "\r"
+        exp_continue
+    }
+    
     "is this ok?" {
         send "\r"
         exp_continue
@@ -80,6 +85,7 @@ interact {
             [string match "*Y/n*" $output_buffer] || 
             [string match "*Continue?*" $output_buffer] || 
             [string match "*\? ❯ Yes*" $output_buffer] || 
+            [string match "*│ ❯ Yes*" $output_buffer] || 
             [string match "*is this ok\?*" $output_buffer]} {
             
             send -- "\r"
