@@ -9,6 +9,7 @@ Claude-Vibe is a CLI wrapper for Claude Code that auto-confirms prompts, freeing
 2. Clone this repo: 
 ```bash
 git clone git@github.com:djgish485/Claude-vibe.git
+cd Claude-vibe
 ```
 
 3. Make the scripts executable:
