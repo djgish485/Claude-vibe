@@ -64,7 +64,7 @@ To use the notification feature:
    export VIBE_NOTIFICATION_SCRIPT="https://script.google.com/macros/s/your-deployed-script-id/exec"
    ```
 
-3. Add the notification instruction to your CLAUDE.md:
+3. Tell Claude Code:
 
    ```
    Add to CLAUDE.md the instruction for Claude that at the end of EVERY response to always execute /usr/local/bin/notify-vibe "summary" where "summary" is a few words describing what it just did.
