@@ -1,6 +1,6 @@
 # Claude-Vibe
 
-Claude-Vibe is a CLI wrapper for Claude that auto-confirms prompts, freeing you up to vibe. You can also be notified when Claude Code finishes its response.
+Claude-Vibe is a CLI wrapper for Claude Code that auto-confirms prompts, freeing you up to vibe. You can also be notified when Claude Code finishes its response.
 
 ## Installation
 
