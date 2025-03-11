@@ -33,6 +33,11 @@ set timeout -1
 
 # Auto-confirmation patterns
 expect_after {
+    "Do you want to make this edit to" {
+        send "\r"
+        exp_continue
+    }
+    
     "Do you want to" {
         send "\r"
         exp_continue
@@ -70,7 +75,8 @@ interact {
         append output_buffer $char
         
         # Auto-confirmation for prompts
-        if {[string match "*Do you want to*" $output_buffer] || 
+        if {[string match "*Do you want to make this edit to*" $output_buffer] || 
+            [string match "*Do you want to*" $output_buffer] || 
             [string match "*Y/n*" $output_buffer] || 
             [string match "*Continue?*" $output_buffer] || 
             [string match "*\? ❯ Yes*" $output_buffer] || 
