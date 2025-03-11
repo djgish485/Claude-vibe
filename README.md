@@ -8,7 +8,6 @@ Claude-Vibe is a CLI wrapper for Claude that auto-confirms prompts, freeing you 
 ```bash
 git clone git@github.com:djgish485/Claude-vibe.git
 ```
-Let me know if you need to add an SSH key into Github.
 
 2. Make the scripts executable:
 ```bash
