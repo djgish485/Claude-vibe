@@ -62,7 +62,7 @@ sudo apt-get install expect  # on Ubuntu/Debian
 
 - After ALL code changes, automatically stage and commit the modified files with a summary message of the changes made.
 - To push changes to the remote repository, run `git push`.
-- At the end of EVERY response, always execute `notify-vibe "summary"` where "summary" is a few words describing what was just done.
+- At the end of EVERY response, always execute `/usr/local/bin/notify-vibe "summary"` where "summary" is a few words describing what was just done.
 
 ## Usage
 
