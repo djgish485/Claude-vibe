@@ -15,7 +15,7 @@ fi
 # Start Claude with auto-confirmation
 if $USE_EXPECT; then
     # Create an expect script for auto-confirmation
-    cat > /tmp/claude_babysitter.exp << 'EOF'
+    cat > /tmp/claude_vibe.exp << 'EOF'
 #!/usr/bin/expect -f
 
 # Get command line arguments
@@ -98,13 +98,13 @@ interact {
 EOF
 
     # Make the expect script executable
-    chmod +x /tmp/claude_babysitter.exp
+    chmod +x /tmp/claude_vibe.exp
 
     # Run the expect script
-    /tmp/claude_babysitter.exp "$@"
+    /tmp/claude_vibe.exp "$@"
 
     # Clean up
-    rm -f /tmp/claude_babysitter.exp
+    rm -f /tmp/claude_vibe.exp
 else
     # If expect is not available, just run claude directly
     claude "$@"
