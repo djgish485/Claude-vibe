@@ -4,31 +4,6 @@ Claude-Vibe is a CLI wrapper for Claude that auto-confirms prompts, making inter
 
 ## Installation
 
-### Set up Brave Search MCP Server
-
-Install and run the brave search MCP server:
-```bash
-npx -y @modelcontextprotocol/server-brave-search &
-```
-
-This should be at the end of ~/.claude.json:
-```json
-"mcpServers": {
-    "brave-search": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-brave-search"
-      ],
-      "env": {
-        "BRAVE_API_KEY": "xxx"
-      }
-    }
-  }
-```
-
-### Install Claude-Vibe
-
 1. Clone this repo: 
 ```bash
 git clone git@github.com:djgish485/Claude-vibe.git
