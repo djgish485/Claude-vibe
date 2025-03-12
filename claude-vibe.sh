@@ -19,7 +19,6 @@ if $USE_EXPECT; then
 #!/usr/bin/expect -f
 
 # Get command line arguments
-set timeout -1
 set args [lrange $argv 0 end]
 
 # Initialize variables for keeping track of recent output
@@ -28,8 +27,8 @@ set output_buffer ""
 # Start claude with the arguments
 spawn -noecho claude {*}$args
 
-# Set timeout for expect commands
-set timeout -1
+# Set timeout for expect commands - using a reasonable value instead of unlimited
+set timeout 2
 
 # Auto-confirmation patterns
 expect_after {
@@ -69,7 +68,7 @@ expect_after {
     }
 }
 
-# Main interaction loop 
+# Main interaction loop with improved buffer handling
 interact {
     -o 
     -re . {
@@ -78,6 +77,9 @@ interact {
         
         # Collect output character by character for auto-confirmation
         append output_buffer $char
+        
+        # Process buffer in chunks to avoid overwhelming with fast output
+        after 10
         
         # Auto-confirmation for prompts
         if {[string match "*Do you want to make this edit to*" $output_buffer] || 
@@ -88,13 +90,15 @@ interact {
             [string match "*│ ❯ Yes*" $output_buffer] || 
             [string match "*is this ok\?*" $output_buffer]} {
             
+            # Add a small delay before sending confirmation to ensure prompt is fully rendered
+            after 50
             send -- "\r"
             set output_buffer ""
         }
         
-        # Keep buffer at reasonable size
-        if {[string length $output_buffer] > 300} {
-            set output_buffer [string range $output_buffer end-299 end]
+        # Keep buffer at reasonable size but increased to handle more output
+        if {[string length $output_buffer] > 1000} {
+            set output_buffer [string range $output_buffer end-999 end]
         }
         
         # Pass the output to the user
