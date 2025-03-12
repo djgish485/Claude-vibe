@@ -27,8 +27,8 @@ set output_buffer ""
 # Start claude with the arguments
 spawn -noecho claude {*}$args
 
-# Set timeout for expect commands - using a reasonable value instead of unlimited
-set timeout 2
+# Set timeout for expect commands
+set timeout -1
 
 # Auto-confirmation patterns
 expect_after {
@@ -78,9 +78,6 @@ interact {
         # Collect output character by character for auto-confirmation
         append output_buffer $char
         
-        # Process buffer in chunks to avoid overwhelming with fast output
-        after 10
-        
         # Auto-confirmation for prompts
         if {[string match "*Do you want to make this edit to*" $output_buffer] || 
             [string match "*Do you want to*" $output_buffer] || 
@@ -90,8 +87,8 @@ interact {
             [string match "*│ ❯ Yes*" $output_buffer] || 
             [string match "*is this ok\?*" $output_buffer]} {
             
-            # Add a small delay before sending confirmation to ensure prompt is fully rendered
-            after 50
+            # Add a minimal delay before sending confirmation to ensure prompt is fully rendered
+            after 5
             send -- "\r"
             set output_buffer ""
         }
