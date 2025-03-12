@@ -3,6 +3,15 @@
 # Claude Vibe
 # Auto-confirms prompts for Claude
 
+# POTENTIAL FIXES FOR FLICKERING AND INPUT LAG ISSUES:
+# 1. Use stty raw mode to improve terminal handling
+# 2. Modify the interact block to prioritize input over output
+# 3. Implement a different approach using pty.js or similar
+# 4. Add buffering with more aggressive batching for both input and output
+# 5. Try the -nottycopy option in expect's spawn command
+# 6. Replace character-by-character processing with line-buffered approach
+# Note: These issues persist with or without the --remote flag
+
 # Default mode
 REMOTE_MODE=false
 
