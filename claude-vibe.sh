@@ -20,6 +20,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# Debug output to confirm remote mode setting
+echo "Remote mode: $REMOTE_MODE" >&2
+
 # Check for expect
 if command -v expect &> /dev/null; then
     USE_EXPECT=true
