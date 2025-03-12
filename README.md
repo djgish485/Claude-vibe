@@ -54,7 +54,7 @@ To use the notification feature:
    function doGet(e) {
      var body = e.parameter.body || "No body text provided";
 
-     MailApp.sendEmail("dan.gish@gmail.com", "Claude Code task has completed successfully.", body);
+     MailApp.sendEmail("your-email-address", "Claude Code task has completed successfully.", body);
      return ContentService.createTextOutput("Email sent successfully: "+body);
    }
    ```
